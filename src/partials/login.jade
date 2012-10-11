@@ -1,0 +1,16 @@
+﻿
+.modal.hide#myModal
+  .modal-header
+    button.close(type="button", data-dismiss="modal") x
+    h3 Login to MyWebsite.com
+  .modal-body
+    form(method="post", action='', name="login_form")
+      p
+        input#email.span3(type="text", name="eid", placeholder="Email")
+      p
+        input.span3(type="password", name="passwd", placeholder="Password")
+      p
+        button.btn.btn-primary(type="submit") Sign in
+        a(href="#") Forgot Password?
+  .modal-footer New To MyWebsite.com?
+    a.btn.btn-primary(href="#") Register 

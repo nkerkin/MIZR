@@ -1,0 +1,25 @@
+﻿.well.sidebar-nav
+	ul.nav.nav-list
+		li.nav-header
+			h4 Accounts
+				button.btn.btn-small.btn-success.pull-right(type='button') +
+		li( ng:repeat='account in Accounts')
+			a(href='#/edit_account')
+				span(ng:class='[account.icon, \'icon-white\' ];')
+				span(ng:bind='account.name')
+				span(style='float: right;', ng:class='pull-right') ${{account.balance}}
+		li.nav-header
+			h4 Goals
+		li(ng:repeat='goal in Goals')
+			a(href='')
+				div(ng:bind='goal.name')
+				.progress.progress-info.progress-warning.progress-striped
+					.bar(ng:style='{width:  goal.progress + \'%\'}')
+		li.nav-header
+			h4 Recurring Transactions
+		li(ng:repeat='transaction in Transactions')
+			a(href='')
+				span(ng:bind='goal.name')
+				span(ng:bind='goal.progress')
+//well 
+

@@ -1,0 +1,24 @@
+
+<div class="well sidebar-nav">
+  <ul class="nav nav-list">
+    <li class="nav-header">
+      <h4>Accounts
+        <button type="button" class="btn btn-small btn-success pull-right">+</button>
+      </h4>
+    </li>
+    <li ng-repeat="account in Accounts"><a href="#/edit_account"><span ng-class="[account.icon, 'icon-white' ];"></span><span ng-bind="account.name"></span><span style="float: right;" ng-class="pull-right">${{account.balance}}</span></a></li>
+    <li class="nav-header">
+      <h4>Goals</h4>
+    </li>
+    <li ng-repeat="goal in Goals"><a href="">
+        <div ng-bind="goal.name"></div>
+        <div class="progress progress-info progress-warning progress-striped">
+          <div ng:style="{width:  goal.progress + '%'}" class="bar"></div>
+        </div></a></li>
+    <li class="nav-header">
+      <h4>Recurring Transactions</h4>
+    </li>
+    <li ng-repeat="transaction in Transactions"><a href=""><span ng-bind="goal.name"></span><span ng-bind="goal.progress"></span></a></li>
+  </ul>
+</div>
+<!--well -->
