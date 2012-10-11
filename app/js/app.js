@@ -1,5 +1,7 @@
 'use strict';
+Parse.initialize("l8TQTG1TFSGF83hkgZmVH13F4XcaxODTyAIIXAK4", "JAQLekZlAlsvdTFdWhu2BwK9s663IXhF1KUy0NPJ");
 angular.module('myApp', [
+    'parse', 
     'myApp.filters', 
     'myApp.services', 
     'myApp.directives'
@@ -22,4 +24,8 @@ angular.module('myApp', [
             redirectTo: '/view1'
         });
     }]);
+angular.module('parse', []).factory('Account', function () {
+    var Account = Parse.Object.extend("Account");
+    return Account;
+});
 //@ sourceMappingURL=app.js.map

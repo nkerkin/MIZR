@@ -2,11 +2,17 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li class="nav-header">
-      <h4>Accounts
+      <h4>Accounts1
         <button type="button" class="btn btn-small btn-success pull-right">+</button>
       </h4>
     </li>
-    <li ng-repeat="account in Accounts"><a href="#/edit_account"><span ng-class="[account.icon, 'icon-white' ];"></span><span ng-bind="account.name"></span><span style="float: right;" ng-class="pull-right">${{account.balance}}</span></a></li>
+      <li ng-repeat="account in Accounts">
+          <a href="#/edit_account">
+              <span ng-class="[account.attributes.Icon, 'icon-white' ];"></span>
+              <span ng-bind="account.attributes.Name"></span>
+              <span style="float: right;" ng-class="pull-right">${{account.attributes.Balance}}</span>
+          </a>
+      </li>
     <li class="nav-header">
       <h4>Goals</h4>
     </li>

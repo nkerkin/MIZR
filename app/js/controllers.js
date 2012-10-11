@@ -4,16 +4,15 @@ var AngularController = (function () {
     return AngularController;
 })();
 var SidebarController = (function () {
-    function SidebarController($scope) {
-        $scope.Accounts = [
-            {
-                id: 1,
-                name: "westpac",
-                account_num: "1235",
-                balance: "234.67",
-                icon: "icon-music"
+    function SidebarController($scope, Account) {
+        var query = new Parse.Query(Account);
+        query.find({
+            success: function (results) {
+                $scope.$apply(function () {
+                    $scope.Accounts = results;
+                });
             }
-        ];
+        });
         $scope.Goals = [
             {
                 id: 1,
@@ -24,7 +23,8 @@ var SidebarController = (function () {
         ];
     }
     SidebarController.$inject = [
-        '$scope'
+        '$scope', 
+        'Account'
     ];
     return SidebarController;
 })();

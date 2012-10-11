@@ -19,7 +19,7 @@ watch('(src/js/.*)') do |md|
   p cmd
   `#{cmd}`
   cmd = "copy #{md.to_s} #{md.to_s.sub(/src/, 'app')} ".gsub(/\//, '\\') + "/Y"
-   p cmd
+   p "#{cmd}"
   `#{cmd}`
 
 end
