@@ -26,6 +26,14 @@ angular.module('myApp', [
     }]);
 angular.module('parse', []).factory('Account', function () {
     var Account = Parse.Object.extend("Account");
+    var query = new Parse.Query(Account);
+    Account.findall = function (cb) {
+        query.find({
+            success: function (results) {
+                cb(results);
+            }
+        });
+    };
     return Account;
 });
 //@ sourceMappingURL=app.js.map

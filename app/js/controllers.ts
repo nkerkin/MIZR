@@ -4,34 +4,30 @@
 'use strict';
 
 class AngularController {
-	$inject: string[];
+    $inject: string[];
 }
 
 /* Controllers */
-class SidebarController  {	
-	static $inject =  ['$scope', 'Account' ];	
-	constructor($scope, Account)
-	{
-        var query = new Parse.Query(Account);
-        query.find({
-            success: results => {                
-                 $scope.$apply(() => {
-                  $scope.Accounts = results;
-                });    
-                                
-            }
+class SidebarController {
+    static $inject = ['$scope', 'Account'];
+    constructor ($scope, Account) {
+        Account.findall((results) =>{
+            $scope.$apply(() => {
+                $scope.Accounts = results;
+            });
         });
-		//$scope.Accounts =  [{id:1, name:"westpac", account_num:"1235", balance:"234.67", icon:"icon-music"}] ;
-	    $scope.Goals = [{ id: 1, name: "Car", account_num: "sf", progress: "24"}]; 
-	}  
+
+        //$scope.Accounts =  [{id:1, name:"westpac", account_num:"1235", balance:"234.67", icon:"icon-music"}] ;
+        $scope.Goals = [{ id: 1, name: "Car", account_num: "sf", progress: "24" }];
+    }
 }
 
 
-function EditAccount() {}
+function EditAccount() { }
 EditAccount.$inject = [];
 
 
-function MyCtrl1() {}
+function MyCtrl1() { }
 MyCtrl1.$inject = [];
 
 

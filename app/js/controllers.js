@@ -5,13 +5,10 @@ var AngularController = (function () {
 })();
 var SidebarController = (function () {
     function SidebarController($scope, Account) {
-        var query = new Parse.Query(Account);
-        query.find({
-            success: function (results) {
-                $scope.$apply(function () {
-                    $scope.Accounts = results;
-                });
-            }
+        Account.findall(function (results) {
+            $scope.$apply(function () {
+                $scope.Accounts = results;
+            });
         });
         $scope.Goals = [
             {
