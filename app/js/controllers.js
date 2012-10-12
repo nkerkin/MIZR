@@ -5,11 +5,7 @@ var AngularController = (function () {
 })();
 var SidebarController = (function () {
     function SidebarController($scope, Account) {
-        Account.findall(function (results) {
-            $scope.$apply(function () {
-                $scope.Accounts = results;
-            });
-        });
+        $scope.Accounts = Account.findall();
         $scope.Goals = [
             {
                 id: 1,

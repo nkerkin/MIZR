@@ -11,12 +11,7 @@ class AngularController {
 class SidebarController {
     static $inject = ['$scope', 'Account'];
     constructor ($scope, Account) {
-        Account.findall((results) =>{
-            $scope.$apply(() => {
-                $scope.Accounts = results;
-            });
-        });
-
+        $scope.Accounts = Account.findall();
         //$scope.Accounts =  [{id:1, name:"westpac", account_num:"1235", balance:"234.67", icon:"icon-music"}] ;
         $scope.Goals = [{ id: 1, name: "Car", account_num: "sf", progress: "24" }];
     }

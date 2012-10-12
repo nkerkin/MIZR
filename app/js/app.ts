@@ -22,19 +22,25 @@ angular.module('myApp', ['parse', 'myApp.filters', 'myApp.services', 'myApp.dire
 
 
 // This is a module for cloud persistance in parse - http://parse.com
-angular.module('parse', []).
-    factory('Account', function () {
+angular.module('parse', ['ng']).
+    factory('Account', function ($rootScope, $q) {
 
         var Account = Parse.Object.extend("Account");
         var query = new Parse.Query(Account);
-        Account.findall = (cb) =>
+
+        Account.findall = () =>
         {
+            var deferred = $q.defer();
             query.find({
                 success: results => {
-                    cb(results);
+                    $rootScope.$apply(() => {
+                        deferred.resolve(results);
+                    });
                 }
             });
-        }
+            
+            return deferred.promise;
+        };
 
         return Account;
     });

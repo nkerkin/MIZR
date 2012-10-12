@@ -24,15 +24,21 @@ angular.module('myApp', [
             redirectTo: '/view1'
         });
     }]);
-angular.module('parse', []).factory('Account', function () {
+angular.module('parse', [
+    'ng'
+]).factory('Account', function ($rootScope, $q) {
     var Account = Parse.Object.extend("Account");
     var query = new Parse.Query(Account);
-    Account.findall = function (cb) {
+    Account.findall = function () {
+        var deferred = $q.defer();
         query.find({
             success: function (results) {
-                cb(results);
+                $rootScope.$apply(function () {
+                    deferred.resolve(results);
+                });
             }
         });
+        return deferred.promise;
     };
     return Account;
 });
