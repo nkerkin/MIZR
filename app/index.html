@@ -28,7 +28,7 @@
                     <input name="password" type="text" class="span2" placeholder="Password">
                     <button type="submit" class="btn">
                         Login!</button>
-                        <a class="btn btn-primary" data-toggle="modal" href="#myModal" >Login</a>
+                    <a class="btn btn-primary" data-toggle="modal" href="#myModal">Login</a>
                     </form>
                 </div>
                 <!--/.nav-collapse -->
@@ -38,10 +38,8 @@
         <!--/.navbar-inner -->
     </div>
     <!--/.navbar -->
-    
     <!-- Login Modal -->
-    <ng-include src="'partials/login.html'" > </ng-include>
-
+    <ng-include src="'partials/login.html'"> </ng-include>
     <div class="container-fluid">
         <div class="row-fluid">
             <div id="sidebar" class="span3" ng-controller="SidebarController">
@@ -50,7 +48,12 @@
             </div>
             <!--/span-->
             <div class="span9">
-                <div class="hero-unit">
+                <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        ×</button>
+                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                </div>
+                <div class="well">
                     <div ng-view>
                     </div>
                     <hr />
@@ -83,17 +86,26 @@
         <script type="text/javascript" src="lib/parse/js/parse-1.1.5.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="lib/underscore/underscore.min.js"></script>
 -->
     <script type="text/javascript" src="lib/angular/angular.js"></script>
     <script type="text/javascript" src="lib/parse/js/parse-1.1.5.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
-
+    <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/filters.js"></script>
     <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript">
+        //        $(function () {
+        //            
+        //            $("body").bind("DOMSubtreeModified", function nodeInsertedCallback(event) { console.log(event); });
+
+        //        });
+      
+
+    </script>
 </body>
 </html>

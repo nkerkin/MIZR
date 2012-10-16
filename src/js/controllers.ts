@@ -17,9 +17,24 @@ class SidebarController {
     }
 }
 
+class EditAccountController {
+    static $inject = ['$scope', '$routeParams', 'Account'];
+    constructor ($scope, $routeParams, Account) {
+        //var self = this;
 
-function EditAccount() { }
-EditAccount.$inject = [];
+        Account.load($routeParams.id).then(account => {
+            //self.original = account;
+            $scope.account = account;
+        });
+
+        $scope.save = () =>
+        {
+            $scope.account.set($scope.account);
+            $scope.account.save();
+        };
+    }
+}
+
 
 
 function MyCtrl1() { }

@@ -1,0 +1,28 @@
+form.form-horizontal
+	fieldset
+		#legend
+			legend Account
+		.control-group
+			label.control-label( for="input01") Account Name
+			.controls
+				input#input01.input-xlarge( type="text", placeholder="Account Name", ng:model="account.attributes.Name" )
+				p.help-block
+		.control-group
+			label.control-label Starting Balance
+			.controls
+				.input-prepend.input-append
+					span.add-on $
+					input#prependedInput.span2(placeholder="0", type="number", step=".1", ng:model="account.attributes.Balance" )
+					span.add-on .00
+				p.help-block
+		.control-group
+			label.control-label Icon
+			.controls
+				select.input-xlarge
+					option Your
+					option Options
+					option Here!
+		.control-group
+			.form-actions
+				button.btn.btn-primary(ng:click="save()") Save changes
+				button.btn(type="button") Cancel

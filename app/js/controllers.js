@@ -21,9 +21,23 @@ var SidebarController = (function () {
     ];
     return SidebarController;
 })();
-function EditAccount() {
-}
-EditAccount.$inject = [];
+var EditAccountController = (function () {
+    function EditAccountController($scope, $routeParams, Account) {
+        Account.load($routeParams.id).then(function (account) {
+            $scope.account = account;
+        });
+        $scope.save = function () {
+            $scope.account.set($scope.account);
+            $scope.account.save();
+        };
+    }
+    EditAccountController.$inject = [
+        '$scope', 
+        '$routeParams', 
+        'Account'
+    ];
+    return EditAccountController;
+})();
 function MyCtrl1() {
 }
 MyCtrl1.$inject = [];

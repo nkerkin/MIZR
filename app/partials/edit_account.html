@@ -1,60 +1,40 @@
+
 <form class="form-horizontal">
-    <fieldset>
-        <div id="legend" class="">
-            <legend class="">Account</legend>
+  <fieldset>
+    <div id="legend">
+      <legend>Account</legend>
+    </div>
+    <div class="control-group">
+      <label for="input01" class="control-label">Account Name</label>
+      <div class="controls">
+        <input id="input01" type="text" placeholder="Account Name" ng:model="account.attributes.Name" class="input-xlarge"/>
+        <p class="help-block"></p>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Starting Balance</label>
+      <div class="controls">
+        <div class="input-prepend input-append"><span class="add-on">$</span>
+          <input id="prependedInput" placeholder="0" type="number" step=".1" ng:model="account.attributes.Balance" class="span2"/><span class="add-on">.00</span>
         </div>
-
-
-        <div class="control-group">
-
-            <!-- Text input-->
-            <label class="control-label" for="input01">Account Name</label>
-
-            <div class="controls">
-                <input id="input01"  type="text" placeholder="" class="input-xlarge">
-
-                <p class="help-block"></p>
-            </div>
-        </div>
-
-        <div class="control-group">
-
-            <!-- Prepended text-->
-            <label class="control-label">Starting Balance</label>
-
-            <div class="controls">
-                <div class="input-prepend">
-                    <span class="add-on">$</span>
-                    <input class="span2" placeholder="0.00" id="prependedInput" type="text">
-                </div>
-                <p class="help-block"></p>
-            </div>
-
-        </div>
-
-
-        <div class="control-group">
-
-            <!-- Select Basic -->
-            <label class="control-label">Icon</label>
-
-            <div class="controls">
-                <select class="input-xlarge">
-                    <option>Your</option>
-                    <option>Options</option>
-                    <option>Here!</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="control-group">
-            <!-- Form Actions -->
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn">Cancel</button>
-            </div>
-        </div>
-
-
-    </fieldset>
+        <p class="help-block"></p>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Icon</label>
+      <div class="controls">
+        <select class="input-xlarge">
+          <option>Your</option>
+          <option>Options</option>
+          <option>Here!</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="form-actions">
+        <button ng:click="save()" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn">Cancel</button>
+      </div>
+    </div>
+  </fieldset>
 </form>
